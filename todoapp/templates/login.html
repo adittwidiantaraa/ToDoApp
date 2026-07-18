@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,5 +20,57 @@
         </div>
         <button type="submit">Login</button>
     </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ToDoApp</title>
+    <!-- daisyUI & Tailwind CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk ikon gratis -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-base-200 min-h-screen">
+
+    <!-- NAVBAR UTAMA -->
+    <div class="navbar bg-base-100 shadow-md px-4 md:px-8">
+        <div class="flex-1">
+            <a class="text-xl font-bold text-primary flex items-center gap-2">
+                <i class="fa-solid fa-list-check"></i> ToDoApp
+            </a>
+        </div>
+        <div class="flex-none gap-4">
+            <!-- Menampilkan Info User yang Sedang Login -->
+            <span class="text-sm font-medium hidden sm:inline">Halo, <strong class="text-primary">{{ user.username }}</strong></span>
+            <!-- Tombol Logout -->
+            <a href="{% url 'logout' %}" class="btn btn-error btn-outline btn-sm gap-2">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- KONTEN UTAMA -->
+    <div class="max-w-4xl mx-auto p-4 md:p-8 mt-6">
+        <div class="bg-base-100 shadow-xl rounded-2xl p-6 border border-base-300">
+            <h1 class="text-2xl font-bold text-base-content mb-4">Daftar Tugas Anda</h1>
+            
+            <!-- Tempat kode Form Input Tambah Tugas dan List To-Do kamu nantinya -->
+            <div class="alert alert-info shadow-sm">
+                <i class="fa-solid fa-circle-info text-info-content"></i>
+                <span>Selamat datang di dashboard! Desain tampilan luar sudah siap, sekarang kamu bisa mulai menghubungkan data To-Do dari database ke sini.</span>
+            </div>
+
+            <!-- Contoh Kerangka Penempatan List (Bisa kamu hapus/sesuaikan nanti) -->
+            <div class="mt-6 space-y-2">
+                <!-- Tambahkan loop tugas kamu di sini nanti -->
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
