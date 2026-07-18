@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,6 +20,67 @@
 
         <button type="submit">Register</button>
     </form>
+
+</body>
+</html> -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun - ToDo App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="bg-base-200 min-h-screen flex items-center justify-center p-4">
+
+    <div class="card bg-base-100 w-full max-w-sm shadow-xl border border-base-300">
+        <div class="card-body">
+            <h2 class="card-title text-2xl font-bold text-center justify-center text-secondary mb-2">Buat Akun</h2>
+            <p class="text-center text-sm text-base-content/70 mb-4">Mulai kelola tugas-tugas harianmu di sini</p>
+            
+            <form method="POST">
+                {% csrf_token %}
+                
+                <!-- Input Username -->
+                <div class="form-control mb-4">
+                    <label class="label">
+                        <span class="label-text font-semibold">Username</span>
+                    </label>
+                    <input type="text" name="username" placeholder="Pilih username unik" class="input input-bordered focus:input-secondary w-full" required />
+                </div>
+                
+                <!-- Input Password -->
+                <div class="form-control mb-4">
+                    <label class="label">
+                        <span class="label-text font-semibold">Password</span>
+                    </label>
+                    <input type="password" name="password" placeholder="Minimal 8 karakter" class="input input-bordered focus:input-secondary w-full" required />
+                </div>
+
+                <!-- Input Konfirmasi Password -->
+                <div class="form-control mb-6">
+                    <label class="label">
+                        <span class="label-text font-semibold">Konfirmasi Password</span>
+                    </label>
+                    <input type="password" name="confirm_password" placeholder="Ketik ulang password" class="input input-bordered focus:input-secondary w-full" required />
+                </div>
+                
+                <!-- Tombol Register -->
+                <div class="form-control mt-4">
+                    <button type="submit" class="btn btn-secondary w-full text-white">Daftar Akun</button>
+                </div>
+            </form>
+            
+            <div class="divider my-6 text-xs text-base-content/50">SUDAH PUNYA AKUN?</div>
+            
+            <p class="text-center text-sm">
+                <a href="{% url 'login' %}" class="link link-secondary font-semibold">Kembali ke Halaman Login</a>
+            </p>
+        </div>
+    </div>
 
 </body>
 </html>
